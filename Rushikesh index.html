@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaebdd;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00c3ff;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0073e6;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 10px;
+    border: 2px solid #dee600;
+}
+
+/* Buttons */
+button {
+    background: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+/* Skills */
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    background: #e0f2ff;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Projects */
+.project-card {
+    display: inline-block;
+    width: 300px;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    margin: 10px 0;
+}
+
+/* Contact */
+#contact a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>VAISHNAV TARDE</h1>
+        <p><b>Computer Engineering Student at MITAOE Alandi Pune</b></p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="education.html">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2><b>Welcome to My Portfolio</b></h2>
+        <img src="self2.jpg" alt="Profile Picture" class="profile-img">
+        <p><h4>Hello! I'm engineering student exploring the world of technology and innovation.</h4></p>
+        <button onclick="location.href='education.html'">Learn More</button>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS</li>
+            <li>Python, C</li>
+            <li>Problem Solving </li>
+            <li>Team Collaboration & Leadership</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <img src="protfolio.jpg" alt="Project 1">
+            <h3>Portfolio Website</h3>
+            <p>A personal website showcasing my skills and projects.</p>
+            <button onclick="window.location.href='#'">View Project</button>
+        </div>
+        <div class="project-card">
+            <img src="calcuator.jpeg" alt="Project 2">
+            <h3>Basic Calculator</h3>
+            <p>A simple calculator built using C.</p>
+            <button onclick="window.location.href='calculator.py'">View Project</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Ph.No: +91-90</p>
+        <p>Email: rushishinde4241@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rushikesh-shinde-69aa82344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin.com/in/rushikeshshinde</a></p>
+        <button onclick="window.location.href='mailto:rushishinde4241@gmail.com'">Email Me</button>
+    </section>
+
+    <footer>
+        <p><b>THANK YOU</b></p>
+    </footer>
+</body>
+</html>
