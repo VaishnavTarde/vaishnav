@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vaishnav Tarde - Portfolio</title>
+	<style>
+		:root {
+			--primary-color: #F8BBD0; /* Baby pink */
+			--primary-dark: #F48FB1; /* Slightly darker pink for hover effects */
+			--secondary-color: #6A4162; /* Complementary dark color */
+			--accent-color: #E91E63; /* Accent pink */
+			--light-color: #FFEDF2; /* Very light pink */
+			--dark-color: #403040; /* Dark purple-gray for text */
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		
+		body {
+			background-color: #FFF5F8;
+			color: var(--dark-color);
+			line-height: 1.6;
+		}
+		
+		.container {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		
+		header {
+			background-color: var(--primary-color);
+			color: var(--dark-color);
+			text-align: center;
+			padding: 100px 20px 60px;
+			position: relative;
+		}
+		
+		.profile-photo {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border: 8px solid white;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			margin: 0 auto 30px;
+			display: block;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.profile-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		
+		.header-content h1 {
+			font-size: 3rem;
+			margin-bottom: 10px;
+		}
+		
+		.header-content p {
+			font-size: 1.5rem;
+			opacity: 0.9;
+		}
+		
+		.top-links {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+
+		.top-links a {
+			margin-left: 15px;
+			color: var(--secondary-color);
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.top-links a:hover {
+			color: var(--accent-color);
+		}
+
+		section {
+			padding: 60px 0;
+		}
+		
+		h2 {
+			text-align: center;
+			margin-bottom: 40px;
+			color: var(--secondary-color);
+			position: relative;
+			padding-bottom: 15px;
+		}
+		
+		h2::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100px;
+			height: 3px;
+			background-color: var(--accent-color);
+		}
+		
+		.card {
+			background-color: rgb(255, 255, 255);
+			border-radius: 10px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			padding: 30px;
+			margin-bottom: 30px;
+			transition: transform 0.3s ease;
+			font-size:30px;
+		}
+		
+		.card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+		}
+		
+		.card h3 {
+			color: var(--secondary-color);
+			margin-bottom: 15px;
+			border-bottom: 2px solid var(--primary-color);
+			padding-bottom: 10px;
+		}
+		
+		.skills-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+		}
+		
+		.skill-tag {
+			background-color: var(--primary-color);
+			color: var(--dark-color);
+			padding: 8px 15px;
+			border-radius: 50px;
+			font-size: 0.9rem;
+			display: inline-block;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+		
+		.project-card {
+			margin-bottom: 30px;
+		}
+		
+		.project-card h4 {
+			color: var(--secondary-color);
+			margin-bottom: 10px;
+		}
+		
+		.contact-info {
+			text-align: center;
+			padding: 30px;
+		}
+		
+		footer {
+			text-align: center;
+			padding: 30px;
+			background-color: var(--secondary-color);
+			color: white;
+		}
+		
+		.education-item {
+			margin-bottom: 25px;
+		}
+		
+		.education-item:last-child {
+			margin-bottom: 0;
+		}
+		
+		.highlight {
+			color: var(--accent-color);
+			font-weight: bold;
+		}
+		
+		@media (max-width: 768px) {
+			.header-content h1 {
+				font-size: 2.2rem;
+			}
+			
+			.header-content p {
+				font-size: 1.2rem;
+			}
+			
+			section {
+				padding: 40px 0;
+			}
+			
+			.profile-photo {
+				width: 150px;
+				height: 150px;      
+			}
+		}
+		
+		.contact-form label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+		
+		.contact-form input,
+		.contact-form textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+		h2 {
+    font-size: 36px;
+  }
+  a{
+	font-size: 30px;
+  }
+		
+		.contact-form button {
+			background-color: var(--accent-color);
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 1rem;
+		}
+		.contact-form button:hover {
+			background-color: var(--primary-dark);
+		}
+		
+		#Certificate{
+			height: 300px;
+			width: 250px;
+			margin:200px;
+		}
+		
+		#certificates .card img {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			margin-bottom: 20px;
+		}
+
+		#certificates .card {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="top-links">
+				<a href="https://mail.google.com/mail/u/0/#sent?compose=GTvVlcSGLCJFpPlhWBKlVBsRCBmhrCPBklpjNjrvCvGsKTqDXzrtLTzfbsTJfpdRLhfRbtdmcFXnJ">Email</a>
+				<a href="https://www.linkedin.com/in/vaishnav-tarde" target="_blank">LinkedIn</a>
+			</div>
+			<div class="profile-photo">
+				<img src="v.jpg">
+			</div>
+			<div class="header-content">
+				<h1>Vaishnav Pralhad Tarde</h1>
+				<p>Computer Science Student</p>
+			</div>
+		</div>
+	</header>
+	
+	<section id="about">
+		<div class="container">
+			<h2>About Me</h2>
+			<div class="card">
+				<p>I am a first-year Computer Science student at MIT Academy of Engineering (MITAOE) in Pune.<br> I am passionate about technology and programming and Growing interest in team leadership.</p>
+				<p>I am committed to continuous learning and applying my technical skills to solve real-world problems effectively.</p>
+			</div>
+		</div>
+	</section>
+	
+	<section id="skills">
+		<div class="container">
+			<h2 style="font-size: 36px;">Skills</h2>
+
+			<div class="card">
+				<h3>Technical Skills</h3>
+				<div class="skills-container">
+					<span class="skill-tag">HTML</span>
+					<span class="skill-tag">CSS</span>
+					<span class="skill-tag">Python</span>
+					<span class="skill-tag">C Programming</span>
+				</div>
+				
+				<h3 style="margin-top: 25px;">Soft Skills</h3>
+				<div class="skills-container">
+					<span class="skill-tag">Team Leadership</span>
+					<span class="skill-tag">Problem Solving</span>
+					<span class="skill-tag">Communication</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="education">
+		<div class="container">
+			<h2>Education</h2>
+			<div class="card">
+				<div class="education-item">
+					<h3>B.Tech in Computer Science</h3>
+					<p><strong>Institution:</strong> MIT Academy of Engineering (MITAOE)</p>
+					<p><strong>Location:</strong> Pune, Maharashtra</p>
+					<p><strong>Duration:</strong> 2024 - Present (First Year)</p>
+					<p><strong>First Semester SGPA:</strong> <span class="highlight">8.75</span></p>
+				</div>
+				
+				<div class="education-item">
+					<h3>Higher Secondary Education (PCM)</h3>
+					<p><strong>Institution:</strong> Arts, Commerce and Science College</p>
+					<p><strong>Location:</strong> Rahuri, Ahilyanagar</p>
+					<p><strong>Duration:</strong> 2022 - 2024</p>
+					<p><strong>Percentage:</strong> <span class="highlight">84.83%</span></p>
+				</div>
+				
+				<div class="education-item">
+					<h3>Secondary Education</h3>
+					<p><strong>Institution:</strong> Ashtavinayak English Medium School</p>
+					<p><strong>Location:</strong> Tandulwadi, Rahuri</p>
+					<p><strong>Graduated:</strong> 2022</p>
+					<p><strong>Grade:</strong> <span class="highlight">86.80%</span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="projects">
+		<div class="container">
+			<h2>Projects</h2>
+			<div class="card project-card">
+				<h3>Simple Calculator using C</h3>
+				<p>Developed a functional calculator application using the C programming language. The project demonstrates proficiency in programming logic, user input handling, arithmetic operations, and basic software development concepts.</p>
+				<p><strong>Technologies Used:</strong> C Programming</p>
+				<p><strong>Key Features:</strong></p>
+				<ul style="margin-left: 20px;">
+					<li>Basic arithmetic operations (addition, subtraction, multiplication, division)</li>
+					<li>User-friendly interface</li>
+					<li>Input validation</li>
+                    <li>Error handling</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	<section id="experience">
+		<div class="container">
+			<h2>Academic Experience</h2>
+			<div class="card">
+				<h3>First-Year Computer Science Student</h3>
+				<p><strong>Institution:</strong> MIT Academy of Engineering (MITAOE), Pune</p>
+				<p><strong>Period:</strong> 2024 - Present</p>
+				<p><strong>Focus:</strong> Currently developing foundational knowledge in computer science principles, programming languages, and technical skills that will serve as the building blocks for more advanced concepts.</p>
+				<p><strong>Achievements:</strong> Secured an SGPA of 8.75 in the first semester.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="hobbies">
+		<div class="container">
+			<h2>Hobbies</h2>
+			<div class="card">
+				<p>I enjoy spending my free time engaging in activities like <b>acting, playing cricket, and listening to music</b>. These hobbies help me unwind and stay creatively inspired.</p>
+			</div>
+		</div>
+	</section>
+    <section id="certificates" style="padding: 20px;">
+        <div class="container" style="text-align: center;">
+            <h2>Certificates</h2>
+            <div class="card" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <!-- Top Row -->
+                <img src="cisco essential1.png" alt="Cisco Certificate" style="width: 100%; height: auto;">
+                <img src="cisco essential2.png" alt="Additional Certificate" style="width: 100%; height: auto;">
+                <img src="Great learning.png" alt="Additional Certificate" style="width: 100%; height: auto;">
+                <!-- Bottom Row -->
+                <img src="Simpli learn.png" alt="Additional Certificate" style="width: 100%; height: auto; grid-column: span 1;">
+                <img src="NXT Wave.png" alt="Additional Certificate" style="width: 100%; height: auto; grid-column: span 1;">
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    <footer>
+        <h1 style="font-size: medium;">Phone No.- +91-9075202323<br>
+            Email Id - vaishnavtarde@gmail.com</h1>
+        <p>© 2025 Vaishnav Pralhad Tarde. All rights reserved.</p>
+    </footer>
+</body>
+</html></div></section></ul></div>
